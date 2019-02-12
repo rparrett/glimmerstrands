@@ -86,6 +86,10 @@ class GlimmerStrands {
         this.clear();
 
         this.lines.forEach(function (line) { 
+            if (line.data.length <= 1) {
+                return;
+            }
+
             let polyline = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
             polyline.setAttribute('vector-effect', "non-scaling-stroke");
             let points: Array<string> = [];
