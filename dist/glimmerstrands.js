@@ -65,12 +65,15 @@ var GlimmerStrands = /** @class */ (function () {
         });
         this.clear();
         this.lines.forEach(function (line) {
+            if (line.data.length <= 1) {
+                return;
+            }
             var polyline = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
             polyline.setAttribute('vector-effect', "non-scaling-stroke");
             var points = [];
             line.data.forEach(function (dataPoint, index) {
-                var x = index * 1.0 / line.data.length;
-                var y = dataPoint / max;
+                var x = index * 1.0 / (line.data.length - 1);
+                var y = 1.0 - dataPoint / max;
                 points.push(x.toString() + "," + y.toString());
             });
             polyline.setAttribute("points", points.join(" "));
