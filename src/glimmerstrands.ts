@@ -90,8 +90,8 @@ class GlimmerStrands {
             polyline.setAttribute('vector-effect', "non-scaling-stroke");
             let points: Array<string> = [];
             line.data.forEach(function (dataPoint, index) {
-                let x = index * 1.0 / line.data.length;
-                let y = dataPoint / max;
+                let x = index * 1.0 / (line.data.length - 1);
+                let y = 1.0 - dataPoint / max;
 
                 points.push(x.toString() + "," + y.toString());  
             });
