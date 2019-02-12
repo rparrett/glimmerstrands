@@ -33,7 +33,7 @@ var GlimmerStrands = /** @class */ (function () {
         this.el = document.createElementNS("http://www.w3.org/2000/svg", "svg");
         this.el.setAttribute('width', "100%");
         this.el.setAttribute('height', "100%");
-        this.el.setAttribute('viewBox', "0 0 1 1");
+        this.el.setAttribute('viewBox', "0 -0.1 1 1.1");
         this.el.setAttribute('preserveAspectRatio', "none");
         container.appendChild(this.el);
     }
